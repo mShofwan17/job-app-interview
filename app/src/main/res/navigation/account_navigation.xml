@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account_navigation"
+    app:startDestination="@id/accountFragmnet"
+    >
+
+    <action
+        android:id="@+id/action_to_account"
+        app:destination="@+id/accountFragmnet"/>
+
+    <include-dynamic
+        android:id="@+id/accountFragmnet"
+        app:graphResName="@string/graph_account"
+        app:moduleName="@string/module_account"/>
+
+
+</navigation>

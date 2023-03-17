@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "58806282909",
+    "project_id": "login-17981",
+    "storage_bucket": "login-17981.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58806282909:android:72d4c5a06174811acdc274",
+        "android_client_info": {
+          "package_name": "interview.dansmultipro.jobapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58806282909-p76dok558t4j0prtref24hep1f73hi4c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "interview.dansmultipro.jobapp",
+            "certificate_hash": "a045e40c1172ceafba42627bcfed93c54e63a128"
+          }
+        },
+        {
+          "client_id": "58806282909-vh85io18dkogbb40pdpc2hnk3qhq6deb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwouTVLnfoWIV7igyev0ELKQj-liCIV1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58806282909-639e1lj5jf61ljbtg0aeejjpj6t07m3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/job_navigation"
+    app:startDestination="@id/homeFragment"
+    >
+
+    <action
+        android:id="@+id/action_to_home"
+        app:destination="@+id/homeFragment"/>
+
+    <include-dynamic
+        android:id="@+id/homeFragment"
+        app:graphResName="@string/graph_job"
+        app:moduleName="@string/module_job"/>
+
+    <action
+        android:id="@+id/action_to_auth"
+        app:destination="@+id/auth"/>
+    <include-dynamic
+        android:id="@+id/auth"
+        app:graphResName="@string/graph_auth"
+        app:moduleName="@string/module_auth"/>
+
+</navigation>

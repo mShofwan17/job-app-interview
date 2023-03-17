@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:moduleName="@string/module_job"
+    app:startDestination="@id/jobFragment"
+    >
+    <fragment
+        android:id="@+id/jobFragment"
+        android:name="interview.dansmultipro.feature_job.list_job.ListJobFragment"
+        android:label="@string/job_label"
+        tools:layout="@layout/fragment_list_job"
+        >
+        <action
+            android:id="@+id/action_jobFragment_to_jobDetailFragment"
+            app:destination="@id/jobDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobDetailFragment"
+        android:name="interview.dansmultipro.feature_job.detail_job.DetailJobFragment"
+        android:label="@string/job_detail_label"
+        tools:layout="@layout/fragment_detail_job"
+        />
+</navigation>

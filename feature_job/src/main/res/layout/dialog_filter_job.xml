@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/_8dp"
+    android:padding="@dimen/_12dp"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_fulltime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_4dp"
+        android:textColor="@color/teal_700"
+        android:text="@string/lbl_fulltime"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_full_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/teal_700"
+        app:layout_constraintTop_toTopOf="@id/txt_fulltime"
+        app:layout_constraintStart_toEndOf="@id/txt_fulltime"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_fulltime"
+        android:layout_marginStart="@dimen/_8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_location"
+        app:layout_constraintStart_toStartOf="@id/txt_fulltime"
+        app:layout_constraintTop_toBottomOf="@id/txt_fulltime"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/lbl_location"
+        android:textColor="@color/black"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_location"
+        android:layout_marginTop="@dimen/_6dp"
+        android:padding="@dimen/_6dp"
+        android:background="@drawable/bg_white">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/edt_location"
+            android:hint="@string/lbl_hint_location"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layout_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_16dp"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@color/white"
+        android:text="@string/lbl_search"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

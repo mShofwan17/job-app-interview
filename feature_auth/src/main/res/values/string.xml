@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_label">login_fragment</string>
+    <string name="lbl_login_google">Google</string>
+    <string name="lbl_login_facebook">Facebook</string>
+    <string name="lbl_login_title">Login Melalui : </string>
+</resources>

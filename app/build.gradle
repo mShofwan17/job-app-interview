@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'interview.dansmultipro.jobapp'
+    compileSdk rootProject.ext.compile_sdk
+
+    defaultConfig {
+        applicationId "interview.dansmultipro.jobapp"
+        minSdk rootProject.ext.min_sdk
+        targetSdk rootProject.ext.target_sdk
+        versionCode rootProject.ext.version_code
+        versionName rootProject.ext.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    dynamicFeatures = [':feature_auth', ':feature_job', ':feature_account']
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    api project(path: ':core')
+
+
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    //material
+    api "com.google.android.material:material:$material_version"
+
+    //navigation
+    api "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    api "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version"
+
+    //hilt
+    api "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //retrofit
+    api "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    implementation "com.squareup.retrofit2:retrofit-converters:2.8.1"
+
+
+    //gson
+    api "com.google.code.gson:gson:$gson_version"
+    //okhttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+
+    // Coroutine
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+
+    //Paging Recyclerview
+    api "androidx.paging:paging-runtime-ktx:$paging_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.21"
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.7.21"
+
+    implementation "com.github.chuckerteam.chucker:library:$chucker_version"
+
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    implementation "com.facebook.android:facebook-android-sdk:[4,5)"
+    implementation platform('com.google.firebase:firebase-bom:31.2.3')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+}

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Jobs App</string>
+    <string name="title_feature_auth">Feature Auth</string>
+    <string name="title_feature_job">Job Feature</string>
+    <string name="title_feature_account">Feature Account</string>
+
+    <string name="module_auth">feature_auth</string>
+    <string name="module_job" >feature_job</string>
+    <string name="module_account">feature_account</string>
+
+
+    <string name="account_label">account_fragment</string>
+    <string name="job_label">job_fragment</string>
+
+    <string name="graph_job" >job_navigation</string>
+    <string name="graph_auth" >auth_navigation</string>
+    <string name="graph_account" >account_navigation</string>
+
+    <string name="lbl_dummy_name">Hitori Gotoh</string>
+    <string name="lbl_dummy_job">Android Engineer</string>
+    <string name="lbl_dummy_company">PT. DAnS Multi Pro</string>
+    <string name="lbl_dummy_location">SOHO Pancoran</string>
+
+    <string name="lbl_home">Beranda</string>
+    <string name="lbl_account">Akun</string>
+    <string name="lbl_logout">Logout</string>
+
+    <string name="google_clinet_id">58806282909-vh85io18dkogbb40pdpc2hnk3qhq6deb.apps.googleusercontent.com</string>
+</resources>

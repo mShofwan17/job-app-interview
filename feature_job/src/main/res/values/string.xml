@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="job_label">job_fragment</string>
+    <string name="job_detail_label">job_detail_fragment</string>
+
+    <string name="lbl_search">Cari</string>
+    <string name="lbl_fulltime">Fulltime</string>
+    <string name="lbl_location">Lokasi</string>
+    <string name="lbl_hint_location">Cari Berdasarkan Lokasi</string>
+    <string name="lbl_goto_web">Go to Website</string>
+
+    <string name="lbl_title">Title</string>
+    <string name="lbl_desc">Deskripsi</string>
+    <string name="lbl_detail_job">Detail Job</string>
+    <string name="lbl_apply">APPLY</string>
+</resources>

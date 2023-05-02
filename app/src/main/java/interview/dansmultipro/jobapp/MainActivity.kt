@@ -2,16 +2,19 @@ package interview.dansmultipro.jobapp
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.AndroidEntryPoint
 import interview.dansmultipro.jobapp.databinding.ActivityMainBinding
-import interview.dansmultipro.jobapp.utils.ConfigPref
 import interview.dansmultipro.jobapp.extension.gone
 import interview.dansmultipro.jobapp.extension.setupWithDynamicNavController
 import interview.dansmultipro.jobapp.extension.visible
+import interview.dansmultipro.jobapp.utils.ConfigPref
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -23,6 +26,19 @@ class MainActivity : AppCompatActivity() {
 
     private var currentNavController : NavController?=null
     @Inject lateinit var configPref: ConfigPref
+    @Inject lateinit var auth: FirebaseAuth
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser : FirebaseUser? = auth.currentUser
+        currentUser?.let {
+            configPref.setStatusLogin(true)
+            Toast.makeText(applicationContext, "Sudah Login : ${currentUser.displayName}", Toast.LENGTH_SHORT).show()
+        } ?: run {
+            Toast.makeText(applicationContext, "Belum Login", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

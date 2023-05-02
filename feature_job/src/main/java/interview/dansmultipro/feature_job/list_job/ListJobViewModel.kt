@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import interview.dansmultipro.core.base.BaseViewModel
 import interview.dansmultipro.core.base.BaseVmFactory
+import interview.dansmultipro.source_job.repository.IJobRepository
 import javax.inject.Inject
 
 class ListJobViewModel @Inject constructor(

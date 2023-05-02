@@ -25,6 +25,8 @@ abstract class BaseFragment<VB : ViewBinding>(
     open fun getData(){ }
 
     open fun observeLoading(){ }
+
+    open fun observeErrorMessage() {}
     override fun onAttach(context: Context) {
         super.onAttach(context)
         injectComponent(context)

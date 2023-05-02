@@ -8,6 +8,7 @@ import interview.dansmultipro.feature_account.databinding.FragmentAccountBinding
 import interview.dansmultipro.jobapp.extension.setImageUrl
 import interview.dansmultipro.jobapp.utils.ConfigPref
 import interview.dansmultipro.core.base.BaseFragment
+import interview.dansmultipro.core.module.AuthDependencies
 import showToast
 import javax.inject.Inject
 
@@ -17,10 +18,11 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(
 ) {
 
     @Inject lateinit var configPref: ConfigPref
-    private val firebaseAuth = FirebaseAuth.getInstance()
+    @Inject lateinit var auth: FirebaseAuth
     override fun injectComponent(context: Context) {
         DaggerAccountFragmentComponent.factory().create(
-            EntryPointAccessors.fromApplication(context, ModuleDependencies::class.java)
+            EntryPointAccessors.fromApplication(context, ModuleDependencies::class.java),
+            EntryPointAccessors.fromApplication(context, AuthDependencies::class.java)
         ).inject(this)
     }
 
@@ -40,7 +42,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(
                 configPref.saveUser(null)
                 configPref.setStatusLogin(false)
 
-                firebaseAuth.signOut()
+                auth.signOut()
                 requireActivity().finish()
                 requireActivity().startActivity(requireActivity().intent)
             }

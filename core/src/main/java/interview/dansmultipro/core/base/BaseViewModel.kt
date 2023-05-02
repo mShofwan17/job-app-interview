@@ -14,7 +14,7 @@ abstract class BaseViewModel : ViewModel() {
         _loading.value = boolean
     }
 
-    fun setErrorMessage(message:String){
+    fun setErrorMessage(message:String?){
         _errorMsg.value = message
     }
 }

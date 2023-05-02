@@ -4,6 +4,9 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.google.gson.GsonBuilder
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -106,5 +109,11 @@ object Module {
         sharedPreferences: SharedPreferences
     ) : SharedPreferences.Editor {
         return sharedPreferences.edit()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseAuth() : FirebaseAuth{
+        return Firebase.auth
     }
 }
